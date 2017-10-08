@@ -7,11 +7,6 @@
   </parent>
   <artifactId>tao-1manager</artifactId>
   <packaging>pom</packaging>
-  <modules>
-  	<module>tao-mapper</module>
-  	<module>tao-interface</module>
-  	<module>tao-service</module>
-  </modules>
   <dependencies>
 		<!-- 日志 -->
 		<dependency>
@@ -42,4 +37,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	<modules>
+		<module>tao-interface</module>
+		<module>tao-mapper</module>
+		<module>tao-service</module>
+	</modules>
 </project>

@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>tao-mapper</artifactId>
-  	<dependencies>
+  <dependencies>
 		<!-- taotao-manage-pojo依赖 -->
 
 		<!-- Mybatis -->

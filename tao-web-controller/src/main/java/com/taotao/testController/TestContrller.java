@@ -15,6 +15,7 @@ public class TestContrller {
 	@RequestMapping("query")
 	@ResponseBody
 	public String tt() {
+		System.out.println("进入成功!");
 		return ts.queryDate();
 	}
 }
