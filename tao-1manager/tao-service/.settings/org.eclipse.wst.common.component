@@ -7,6 +7,9 @@
         <dependent-module archiveName="tao-mapper-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tao-mapper/tao-mapper">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="tao-pojo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tao-pojo/tao-pojo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="tao-interface-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tao-interface/tao-interface">
             <dependency-type>uses</dependency-type>
         </dependent-module>

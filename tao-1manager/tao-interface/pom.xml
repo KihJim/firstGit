@@ -6,4 +6,20 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>tao-interface</artifactId>
+  <dependencies>
+		<!-- 分页助手 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.jsqlparser</groupId>
+			<artifactId>jsqlparser</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.taotao</groupId>
+			<artifactId>tao-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
 </project>

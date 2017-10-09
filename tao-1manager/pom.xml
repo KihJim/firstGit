@@ -41,5 +41,6 @@
 		<module>tao-interface</module>
 		<module>tao-mapper</module>
 		<module>tao-service</module>
+		<module>tao-pojo</module>
 	</modules>
 </project>
