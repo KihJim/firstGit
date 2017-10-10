@@ -1,7 +1,6 @@
 package com.taotao.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name="tb_item")
-public class Item implements Serializable{
+public class Item extends BasePojo implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column
@@ -19,22 +18,12 @@ public class Item implements Serializable{
 	private String title;
 	@Column(name="sell_point")
 	private String sellPoint;
-	@Column
 	private Long price;
-	@Column
 	private Integer num;
-	@Column
 	private String barcode;
-	@Column
 	private String image;
-	@Column
 	private Long cid;
-	@Column
 	private Byte status;
-	@Column
-	private Date created;
-	@Column
-	private Date updated;
 
 	public Long getId() {
 		return id;
@@ -108,20 +97,5 @@ public class Item implements Serializable{
 		this.status = status;
 	}
 
-	public Date getCreated() {
-		return created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public Date getUpdated() {
-		return updated;
-	}
-
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
 
 }
