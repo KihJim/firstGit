@@ -83,7 +83,7 @@
         	$.messager.confirm('确认','确定删除ID为 '+ids+' 的商品吗？',function(r){
         	    if (r){
         	    	var params = {"ids":ids};
-                	$.post("/rest/item/delete",params, function(data){
+                	$.post("/rest/item/control/delete",params, function(data){
             			
             				$.messager.alert('提示','删除商品成功!','info',function(){
             					$("#itemList").datagrid("reload");
@@ -105,7 +105,7 @@
         	$.messager.confirm('确认','确定下架ID为 '+ids+' 的商品吗？',function(r){
         	    if (r){
         	    	var params = {"ids":ids};
-                	$.post("/rest/item/instock",params, function(data){
+                	$.post("/rest/item/control/instock",params, function(data){
             			//if(data.status == 200){
             				$.messager.alert('提示','下架商品成功!','info',function(){
             					$("#itemList").datagrid("reload");
@@ -127,7 +127,7 @@
         	$.messager.confirm('确认','确定上架ID为 '+ids+' 的商品吗？',function(r){
         	    if (r){
         	    	var params = {"ids":ids};
-                	$.post("/rest/item/reshelf",params, function(data){
+                	$.post("/rest/item/control/reshelf",params, function(data){
             				$.messager.alert('提示','上架商品成功!','info',function(){
             					$("#itemList").datagrid("reload");
             				});

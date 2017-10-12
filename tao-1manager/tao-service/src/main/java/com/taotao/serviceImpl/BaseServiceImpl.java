@@ -1,6 +1,9 @@
 package com.taotao.serviceImpl;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +19,20 @@ import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 
 public class BaseServiceImpl<T extends BasePojo> implements BaserService<T> {
+	
+	Class<T>clazz;
+	
+	public BaseServiceImpl() {
+	try {
+		Type type = this.getClass().getGenericSuperclass(); //取得 Class
+		ParameterizedType ptype = (ParameterizedType)type; //转成参数化类型
+		clazz = (Class<T>) ptype.getActualTypeArguments()[0];
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+	
 	@Autowired
 	private Mapper<T> mapper;
 	
@@ -47,11 +64,11 @@ public class BaseServiceImpl<T extends BasePojo> implements BaserService<T> {
 
 	@Override
 	public void saveSelective(T t) {
-		if(t.getCreateTime() == null) {
-			t.setCreateTime(new Date());
+		if(t.getCreated() == null) {
+			t.setCreated(new Date());
 		}
-		if(t.getUpdateTime() == null) {
-			t.setUpdateTime(t.getCreateTime());
+		if(t.getUpdated() == null) {
+			t.setUpdated(t.getCreated());
 		}
 		mapper.insertSelective(t);
 		
@@ -59,8 +76,8 @@ public class BaseServiceImpl<T extends BasePojo> implements BaserService<T> {
 
 	@Override
 	public void updateSelective(T t) {
-		if(t.getUpdateTime() == null) {
-			t.setUpdateTime(new Date());
+		if(t.getUpdated() == null) {
+			t.setUpdated(new Date());
 		}
 		mapper.insertSelective(t);
 	}
@@ -72,7 +89,7 @@ public class BaseServiceImpl<T extends BasePojo> implements BaserService<T> {
 
 	@Override
 	public void deleteByIds(Serializable[] ids) {
-		Example example = new Example(this.getClass());
+		Example example = new Example(clazz);
 		Criteria createCriteria = example.createCriteria();
 		createCriteria.andIn("id", Arrays.asList(ids));
 		mapper.deleteByExample(example);

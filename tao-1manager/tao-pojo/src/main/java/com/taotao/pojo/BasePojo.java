@@ -4,23 +4,19 @@ import java.io.Serializable;
 import java.util.Date;
 
 public abstract class BasePojo implements Serializable{
-	private Date createTime;
-	private Date updateTime;
-
-	public Date getCreateTime() {
-		return createTime;
+	private Date created;
+	private Date updated;
+	public Date getCreated() {
+		return created;
 	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
-
-	public Date getUpdateTime() {
-		return updateTime;
+	public Date getUpdated() {
+		return updated;
 	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	} 
+	
 }

@@ -24,7 +24,7 @@ public class ItemCatController {
 	 * @param parentId
 	 * @return
 	 */
-	@RequestMapping(value="/cat" , method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<ItemCat>> queryItemCatListByParentId(@RequestParam(value="id",defaultValue="0")Long parentId) {
 		
 		try {
