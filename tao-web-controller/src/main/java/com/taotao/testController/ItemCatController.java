@@ -20,6 +20,20 @@ public class ItemCatController {
 	@Autowired
 	private ItemCatService service;
 	/**
+	 * 编辑时类目名称返回
+	 */
+	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	public ResponseEntity<ItemCat> queryNameByCid(@PathVariable("id")Long id){
+		try {
+			ItemCat queryById = service.queryById(id);
+			return  ResponseEntity.ok().body(queryById);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+	}
+	/**
 	 * 类目表加载
 	 * @param parentId
 	 * @return
