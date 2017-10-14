@@ -1,5 +1,9 @@
 package com.taotao.service;
 
-public interface ContentCategoryService {
+import com.taotao.pojo.ContentCategory;
 
+public interface ContentCategoryService extends BaserService<ContentCategory>{
+	Integer queryByParentId(Long parentId);
+
+	void delSonSelect(Long id);
 }

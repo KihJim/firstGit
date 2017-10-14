@@ -16,7 +16,7 @@ public interface BaserService<T> {
 	//分页查询列表
 	public List<T> queryListByPage(Integer page, Integer rows);
 	//选择性新增
-	public void saveSelective(T t);
+	public T saveSelective(T t);
 	//选择性更新
 	public void updateSelective(T t);
 	//根据id删除
